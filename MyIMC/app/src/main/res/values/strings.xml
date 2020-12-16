@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Índice de masa corporal (IMC)</string>
+    <string name="labelPeso">Peso (Kg)</string>
+    <string name="labelAltura">Altura (cm)</string>
+    <string name="radioButtonHombre">Hombre</string>
+    <string name="radioButtonMujer">Mujer</string>
+    <string name="labelBotonCalcular">Calcular</string>
+    <string name="msgErrorInputs">Los campos <b>Peso</b> y <b>Altura</b> no deben estar vacíos para realizar el cálculo.</string>
+</resources>
