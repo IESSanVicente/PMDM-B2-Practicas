@@ -28,16 +28,14 @@ class MainActivity : AppCompatActivity() {
                     if (binding.rbHombre.isChecked) {
                         imc = MyFunctions().obtenerIMC(
                             binding.etPeso.text.toString().toDouble(),
-                            binding.etAltura.text.toString().toDouble(),
-                            binding.rbHombre.text.toString()
+                            binding.etAltura.text.toString().toDouble()
                         )
                         binding.tvIMCText.text =
                             MyFunctions().detalleIMC(this, imc, binding.rbHombre.text.toString())
                     } else {
                         imc = MyFunctions().obtenerIMC(
                             binding.etPeso.text.toString().toDouble(),
-                            binding.etAltura.text.toString().toDouble(),
-                            binding.rbMujer.text.toString()
+                            binding.etAltura.text.toString().toDouble()
                         )
                         binding.tvIMCText.text =
                             MyFunctions().detalleIMC(this, imc, binding.rbMujer.text.toString())

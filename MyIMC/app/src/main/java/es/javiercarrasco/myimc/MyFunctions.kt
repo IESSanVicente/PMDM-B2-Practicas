@@ -3,14 +3,10 @@ package es.javiercarrasco.myimc
 import android.content.Context
 
 class MyFunctions {
-    fun dividir(a: Double, b: Int) = a / b
-    fun cuadrado(alt: Double): Double = alt * alt
 
-    fun obtenerIMC(peso: Double, altura: Double, sexo: String): Double {
-        // Se pasan los centímetros a metros.
-        val altPorDos = dividir(altura, 100)
-
-        return peso / cuadrado((altPorDos))
+    fun obtenerIMC(peso: Double, altura: Double): Double {
+        // Se pasa la altura de centímetros a metros.
+        return peso / Math.pow((altura / 100), 2.00)
     }
 
     /**
@@ -20,7 +16,7 @@ class MyFunctions {
      * Peso superior al normal >= 25.0 && <=29.9(H) || >=24 && <=28.9(M)
      * Obesidad Más de > 30.0(H) || >29.0(M)
      */
-    fun detalleIMC(context:Context, imc: Double, sexo: String): String {
+    fun detalleIMC(context: Context, imc: Double, sexo: String): String {
         if (sexo.equals(context.getString(R.string.radioButtonHombre))) {
             when {
                 imc < 18.5 -> return "Peso inferior al normal"
