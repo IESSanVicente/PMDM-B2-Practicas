@@ -19,26 +19,37 @@ class MainActivity : AppCompatActivity() {
             binding.tvIMCText.text = ""
 
             if ((binding.etPeso.text.isNotEmpty()) && (binding.etAltura.text.isNotEmpty())) {
+                binding.tvIMC.text = getString(R.string.textZero)
 
-                var imc: Double
-                if (binding.rbHombre.isChecked) {
-                    imc = MyFunctions().obtenerIMC(
-                        binding.etPeso.text.toString().toDouble(),
-                        binding.etAltura.text.toString().toDouble(),
-                        binding.rbHombre.text.toString()
-                    )
-                    binding.tvIMCText.text =
-                        MyFunctions().detalleIMC(this, imc, binding.rbHombre.text.toString())
+                if ((binding.etPeso.text.toString()
+                        .toDouble() > 0.00) && (binding.etAltura.text.toString().toDouble() > 0.00)
+                ) {
+                    val imc: Double
+                    if (binding.rbHombre.isChecked) {
+                        imc = MyFunctions().obtenerIMC(
+                            binding.etPeso.text.toString().toDouble(),
+                            binding.etAltura.text.toString().toDouble(),
+                            binding.rbHombre.text.toString()
+                        )
+                        binding.tvIMCText.text =
+                            MyFunctions().detalleIMC(this, imc, binding.rbHombre.text.toString())
+                    } else {
+                        imc = MyFunctions().obtenerIMC(
+                            binding.etPeso.text.toString().toDouble(),
+                            binding.etAltura.text.toString().toDouble(),
+                            binding.rbMujer.text.toString()
+                        )
+                        binding.tvIMCText.text =
+                            MyFunctions().detalleIMC(this, imc, binding.rbMujer.text.toString())
+                    }
+                    binding.tvIMC.text = String.format("%.2f", imc)
                 } else {
-                    imc = MyFunctions().obtenerIMC(
-                        binding.etPeso.text.toString().toDouble(),
-                        binding.etAltura.text.toString().toDouble(),
-                        binding.rbMujer.text.toString()
-                    )
-                    binding.tvIMCText.text =
-                        MyFunctions().detalleIMC(this, imc, binding.rbMujer.text.toString())
+                    Toast.makeText(
+                        this,
+                        R.string.msgErrorZeros,
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
-                binding.tvIMC.text = String.format("%.2f", imc)
             } else {
                 Toast.makeText(
                     this,
