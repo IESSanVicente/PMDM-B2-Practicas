@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Índice de masa corporal (IMC) v.4</string>
+    <string name="labelPeso">Peso (Kg)</string>
+    <string name="labelAltura">Altura (cm)</string>
+    <string name="labelIMCHistorico">IMC</string>
+    <string name="radioButtonHombre">Hombre</string>
+    <string name="radioButtonMujer">Mujer</string>
+    <string name="labelBotonCalcular">Calcular</string>
+    <string name="labelBotonHistorico">Histórico</string>
+    <string name="textZero">0.00</string>
+    <string name="filename">datosIMC.txt</string>
+
+    <string name="labelPesoItem">Peso: %1$s</string>
+    <string name="labelAlturaItem">Altura: %1$s</string>
+
+    <string name="msgErrorInputs">Los campos <b>Peso</b> y <b>Altura</b> no deben estar vacíos para realizar el cálculo.</string>
+    <string name="msgErrorZeros">Los campos <b>Peso</b> y <b>Altura</b> deben tener un valores mayores a 0 para realizar el cálculo.</string>
+    <string name="msgInfoRecyclerView">No hay información disponible para el histórico.</string>
+    <string name="msgDialog">¿Deseas guardar la información obtenida para el histórico?</string>
+    <string name="msgErrorDialog">La <i>Activity</i> no puede ser nula a la hora de crear un <i>DialogFragment</i>.</string>
+    <string name="msgAceptDialog">La información se ha registrado en el histórico.</string>
+    <string name="msgCancelDialog">La información no ha quedado registrada.</string>
+    <string name="titleDelete">Eliminar IMC</string>
+    <string name="msgDelete">¿Deseas eliminar el IMC %1$s?</string>
+
+    <string-array name="meses">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Septiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </string-array>
+</resources>
